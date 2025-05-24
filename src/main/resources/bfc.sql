@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS bfc;
 CREATE DATABASE bfc;
 USE bfc;
 
@@ -7,7 +8,8 @@ CREATE TABLE producto
     nombre     VARCHAR(30)   NOT NULL,
     imagen     VARCHAR(255)  NOT NULL,
     precio     DECIMAL(5, 2) NOT NULL,
-    categoria  VARCHAR(20)   NOT NULL
+    categoria  VARCHAR(20)   NOT NULL,
+    estado   VARCHAR(15)   DEFAULT 'ACTIVE'
 );
 
 CREATE TABLE combo
@@ -16,39 +18,35 @@ CREATE TABLE combo
     nombre    VARCHAR(30)   NOT NULL,
     imagen    VARCHAR(255)  NOT NULL,
     precio    DECIMAL(5, 2) NOT NULL,
-    categoria VARCHAR(20)   NOT NULL
+    categoria VARCHAR(20)   NOT NULL,
+    estado   VARCHAR(15)   DEFAULT 'ACTIVE'
 );
 
-CREATE TABLE cliente
+CREATE TABLE usuario
 (
-    clienteId      INT AUTO_INCREMENT PRIMARY KEY,
-    nombreCompleto VARCHAR(50)  NOT NULL,
-    numeroTelefono VARCHAR(15)  NOT NULL,
-    correo         VARCHAR(50)  NOT NULL,
-    contrasena     VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE admin
-(
-    adminId        INT AUTO_INCREMENT PRIMARY KEY,
+    usuarioId        INT AUTO_INCREMENT PRIMARY KEY,
     nombreCompleto VARCHAR(50)  NOT NULL,
     correo         VARCHAR(50)  NOT NULL,
     contrasena     VARCHAR(255) NOT NULL,
-    tipo           VARCHAR(20)  NOT NULL
+    tipo           VARCHAR(20)  NOT NULL,
+    telefono       VARCHAR(15),
+    direccion      VARCHAR(100),
+    estado   VARCHAR(15)   DEFAULT 'ACTIVE'
 );
 
 CREATE TABLE productoCombo
 (
     productoComboId INT AUTO_INCREMENT PRIMARY KEY,
     comboId         INT REFERENCES combo (comboId),
-    productoId      INT REFERENCES producto (productoId)
+    productoId      INT REFERENCES producto (productoId),
+    estado   VARCHAR(15)   DEFAULT 'ACTIVE'
 );
 
 CREATE TABLE pedido
 (
     pedidoId  INT AUTO_INCREMENT PRIMARY KEY,
-    clienteId INT REFERENCES cliente (clienteId),
-    adminId   INT REFERENCES admin (adminId),
+    clienteId INT REFERENCES usuario (usuarioId),
+    adminId   INT REFERENCES usuario (usuarioId),
     fecha     DATETIME DEFAULT CURRENT_TIMESTAMP,
     direccion VARCHAR(40)   NOT NULL,
     monto     DECIMAL(6, 2) NOT NULL,
@@ -75,27 +73,13 @@ CREATE TABLE pedidoDetalle
 
 CREATE TABLE proveedor
 (
-    proveedorId     INT AUTO_INCREMENT PRIMARY KEY,
-    nombre          VARCHAR(50)  NOT NULL,
-    ruc             VARCHAR(20)  NOT NULL,
-    direccion       VARCHAR(100) NOT NULL,
-    telefono        VARCHAR(15)  NOT NULL,
-    correo          VARCHAR(50)  NOT NULL,
-    personaContacto VARCHAR(50)  NOT NULL
+    proveedorId INT AUTO_INCREMENT PRIMARY KEY,
+    nombreEmpresa     VARCHAR(50)  NOT NULL,
+    ruc         VARCHAR(20)  NOT NULL,
+    direccion   VARCHAR(100) NOT NULL,
+    telefono    VARCHAR(15)  NOT NULL,
+    correo      VARCHAR(50)  NOT NULL,
+    descripcion TEXT         NOT NULL,
+    delegado    VARCHAR(50)  NOT NULL,
+    estado   VARCHAR(15)   DEFAULT 'ACTIVE'
 );
-
-CREATE TABLE ingreso
-(
-    ingresoId     INT AUTO_INCREMENT PRIMARY KEY,
-    productoId    INT REFERENCES producto (productoId),
-    proveedorId   INT REFERENCES proveedor (proveedorId),
-    cantidad      INT NOT NULL,
-    fecha         DATETIME DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE inventario
-(
-    inventarioId INT AUTO_INCREMENT PRIMARY KEY,
-    productoId   INT REFERENCES producto (productoId),
-    stock        INT NOT NULL
-)

@@ -1,6 +1,7 @@
 package utp.edu.pe.bfc.models;
 
 import utp.edu.pe.bfc.models.enums.Categoria;
+import utp.edu.pe.bfc.models.enums.Estado;
 
 public class Combo {
     private int comboId;
@@ -8,23 +9,26 @@ public class Combo {
     private String imagen;
     private double precio;
     private Categoria categoria;
+    private Estado estado;
 
     public Combo() {
     }
 
-    public Combo(String nombre, String imagen, double precio, Categoria categoria) {
+    public Combo(String nombre, String imagen, double precio, Categoria categoria, Estado estado) {
         this.nombre = nombre;
         this.imagen = imagen;
         this.precio = precio;
         this.categoria = categoria;
+        this.estado = estado;
     }
 
-    public Combo(int comboId, String nombre, String imagen, double precio, Categoria categoria) {
+    public Combo(int comboId, String nombre, String imagen, double precio, Categoria categoria, Estado estado) {
         this.comboId = comboId;
         this.nombre = nombre;
         this.imagen = imagen;
         this.precio = precio;
         this.categoria = categoria;
+        this.estado = estado;
     }
 
     @Override
@@ -35,6 +39,7 @@ public class Combo {
                 ", imagen='" + imagen + '\'' +
                 ", precio=" + precio +
                 ", categoria=" + categoria +
+                ", estado=" + estado +
                 '}';
     }
 
@@ -76,5 +81,13 @@ public class Combo {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
 }

@@ -6,33 +6,33 @@ import java.time.LocalDateTime;
 
 public class Pedido {
     private int pedidoId;
-    private Cliente cliente;
-    private Admin admin;
+    private Usuario cliente;
+    private Usuario admin;
     private LocalDateTime fecha;
     private String direccion;
     private double monto;
-    private EstadoPedido tipo;
+    private EstadoPedido estado;
 
     public Pedido() {
     }
 
-    public Pedido(Cliente cliente, Admin admin, LocalDateTime fecha, String direccion, double monto, EstadoPedido tipo) {
+    public Pedido(Usuario cliente, Usuario admin, LocalDateTime fecha, String direccion, double monto, EstadoPedido tipo) {
         this.cliente = cliente;
         this.admin = admin;
         this.fecha = fecha;
         this.direccion = direccion;
         this.monto = monto;
-        this.tipo = tipo;
+        this.estado = tipo;
     }
 
-    public Pedido(int pedidoId, Cliente cliente, Admin admin, LocalDateTime fecha, String direccion, double monto, EstadoPedido tipo) {
+    public Pedido(int pedidoId, Usuario cliente, Usuario admin, LocalDateTime fecha, String direccion, double monto, EstadoPedido tipo) {
         this.pedidoId = pedidoId;
         this.cliente = cliente;
         this.admin = admin;
         this.fecha = fecha;
         this.direccion = direccion;
         this.monto = monto;
-        this.tipo = tipo;
+        this.estado = tipo;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class Pedido {
                 ", fecha=" + fecha +
                 ", direccion='" + direccion + '\'' +
                 ", monto=" + monto +
-                ", tipo=" + tipo +
+                ", tipo=" + estado +
                 '}';
     }
 
@@ -56,19 +56,19 @@ public class Pedido {
         this.pedidoId = pedidoId;
     }
 
-    public Cliente getCliente() {
+    public Usuario getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(Usuario cliente) {
         this.cliente = cliente;
     }
 
-    public Admin getAdmin() {
+    public Usuario getAdmin() {
         return admin;
     }
 
-    public void setAdmin(Admin admin) {
+    public void setAdmin(Usuario admin) {
         this.admin = admin;
     }
 
@@ -96,11 +96,11 @@ public class Pedido {
         this.monto = monto;
     }
 
-    public EstadoPedido getTipo() {
-        return tipo;
+    public EstadoPedido getEstado() {
+        return estado;
     }
 
-    public void setTipo(EstadoPedido tipo) {
-        this.tipo = tipo;
+    public void setEstado(EstadoPedido estado) {
+        this.estado = estado;
     }
 }

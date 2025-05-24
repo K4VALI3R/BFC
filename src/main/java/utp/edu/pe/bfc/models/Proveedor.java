@@ -1,46 +1,56 @@
 package utp.edu.pe.bfc.models;
 
+import utp.edu.pe.bfc.models.enums.Estado;
+
 public class Proveedor {
     private int proveedorId;
-    private String nombreCompleto;
+    private String nombreEmpresa;
     private String ruc;
     private String direccion;
     private String telefono;
     private String correo;
-    private String personaContacto;
+    private String descripcion;
+    private String delegado;
+    private Estado estado;
 
     public Proveedor() {
     }
 
-    public Proveedor(String nombreCompleto, String ruc, String direccion, String telefono, String correo, String personaContacto) {
-        this.nombreCompleto = nombreCompleto;
+    public Proveedor(String nombreEmpresa, String ruc, String direccion, String telefono, String correo, String descripcion, String delegado, Estado estado) {
+        this.nombreEmpresa = nombreEmpresa;
         this.ruc = ruc;
         this.direccion = direccion;
         this.telefono = telefono;
         this.correo = correo;
-        this.personaContacto = personaContacto;
+        this.descripcion = descripcion;
+        this.delegado = delegado;
+        this.estado = estado;
     }
 
-    public Proveedor(int proveedorId, String nombreCompleto, String ruc, String direccion, String telefono, String correo, String personaContacto) {
+    public Proveedor(int proveedorId, String nombreEmpresa, String ruc, String direccion, String telefono, String correo, String descripcion, String delegado, Estado estado) {
         this.proveedorId = proveedorId;
-        this.nombreCompleto = nombreCompleto;
+        this.nombreEmpresa = nombreEmpresa;
         this.ruc = ruc;
         this.direccion = direccion;
         this.telefono = telefono;
         this.correo = correo;
-        this.personaContacto = personaContacto;
+        this.descripcion = descripcion;
+        this.delegado = delegado;
+        this.estado = estado;
     }
 
     @Override
     public String toString() {
         return "Proveedor{" +
                 "proveedorId=" + proveedorId +
-                ", nombreCompleto='" + nombreCompleto + '\'' +
+                ", nombreEmpresa='" + nombreEmpresa + '\'' +
                 ", ruc='" + ruc + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", correo='" + correo + '\'' +
-                ", personaContacto='" + personaContacto + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", delegado='" + delegado + '\'' +
+                ", estado=" + estado +
                 '}';
     }
 
@@ -52,12 +62,12 @@ public class Proveedor {
         this.proveedorId = proveedorId;
     }
 
-    public String getNombreCompleto() {
-        return nombreCompleto;
+    public String getNombreEmpresa() {
+        return nombreEmpresa;
     }
 
-    public void setNombreCompleto(String nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
+    public void setNombreEmpresa(String nombreEmpresa) {
+        this.nombreEmpresa = nombreEmpresa;
     }
 
     public String getRuc() {
@@ -92,11 +102,27 @@ public class Proveedor {
         this.correo = correo;
     }
 
-    public String getPersonaContacto() {
-        return personaContacto;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setPersonaContacto(String personaContacto) {
-        this.personaContacto = personaContacto;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getDelegado() {
+        return delegado;
+    }
+
+    public void setDelegado(String delegado) {
+        this.delegado = delegado;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
 }

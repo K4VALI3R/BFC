@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum Tipo {
-    MANAGER ("Gerente"),
-    WORKER ("Trabajador"),;
+    CLIENTE ("Cliente"),
+    ADMIN ("Administrador"),;
 
     private final String displayName;
     Tipo(String displayName) { this.displayName = displayName;}

@@ -11,9 +11,6 @@ public class Ingreso {
     private Proveedor proveedor;
     private LocalDate fecha;
 
-    public Ingreso() {
-    }
-
     public Ingreso(int cantidad, Producto producto, Proveedor proveedor, LocalDate fecha) {
         this.cantidad = cantidad;
         this.producto = producto;

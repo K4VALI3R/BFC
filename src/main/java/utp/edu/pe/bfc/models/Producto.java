@@ -1,6 +1,7 @@
 package utp.edu.pe.bfc.models;
 
 import utp.edu.pe.bfc.models.enums.Categoria;
+import utp.edu.pe.bfc.models.enums.Estado;
 
 public class Producto {
     private int productoId;
@@ -8,23 +9,26 @@ public class Producto {
     private String imagen;
     private double precio;
     private Categoria categoria;
+    private Estado estado;
 
     public Producto() {
     }
 
-    public Producto(String nombre, String imagen, double precio, Categoria categoria) {
+    public Producto(String nombre, String imagen, double precio, Categoria categoria, Estado estado) {
         this.nombre = nombre;
         this.imagen = imagen;
         this.precio = precio;
         this.categoria = categoria;
+        this.estado = estado;
     }
 
-    public Producto(int productoId, String nombre, String imagen, double precio, Categoria categoria) {
+    public Producto(int productoId, String nombre, String imagen, double precio, Categoria categoria, Estado estado) {
         this.productoId = productoId;
         this.nombre = nombre;
         this.imagen = imagen;
         this.precio = precio;
         this.categoria = categoria;
+        this.estado = estado;
     }
 
     @Override
@@ -35,6 +39,7 @@ public class Producto {
                 ", imagen='" + imagen + '\'' +
                 ", precio=" + precio +
                 ", categoria=" + categoria +
+                ", estado=" + estado +
                 '}';
     }
 
@@ -76,5 +81,13 @@ public class Producto {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
 }
