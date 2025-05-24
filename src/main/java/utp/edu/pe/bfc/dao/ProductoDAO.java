@@ -26,13 +26,17 @@ public class ProductoDAO {
     }
 
     public void createProducto(Producto producto) throws SQLException {
-        String query = "INSERT INTO producto (nombre, precio, imagen, categoria) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO producto (nombre, precio, imagen, categoria,estado) VALUES (?, ?, ?, ?,?)";
         try (PreparedStatement ps = cnn.prepareStatement(query)) {
             ps.setString(1, producto.getNombre());
             ps.setDouble(2, producto.getPrecio());
             ps.setString(3, producto.getImagen());
             ps.setString(4, producto.getCategoria().toString());
-            ps.setString(5, producto.getEstado().toString());
+            if (producto.getEstado() == null) {
+                ps.setString(5, Estado.ACTIVE.toString());
+            } else {
+                ps.setString(5, producto.getEstado().toString());
+            }
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new SQLException(e);

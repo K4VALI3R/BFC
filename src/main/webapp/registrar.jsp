@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-      <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>BFC</title>
-        <link rel="icon" type="image/png" href="img/bfclogo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BFC</title>
+    <link rel="icon" type="image/png" href="img/bfclogo.png">
 
 
     <style>
@@ -100,18 +100,18 @@
         String msg = request.getParameter("msg");
         if ("ok".equals(msg)) {
     %>
-        <div class="alert alert-success text-center mt-4">
-            ¡Registrado exitosamente! Redirigiendo a login...
-        </div>
-        <script>
-            setTimeout(() => {
-                window.location.replace("login.jsp");
-            }, 3000);
-        </script>
+    <div class="alert alert-success text-center mt-4">
+        ¡Registrado exitosamente! Redirigiendo a login...
+    </div>
+    <script>
+        setTimeout(() => {
+            window.location.replace("login.jsp");
+        }, 3000);
+    </script>
     <% } else if ("error".equals(msg)) { %>
-        <div class="alert alert-danger text-center mt-4">
-            Las contraseñas no coinciden.
-        </div>
+    <div class="alert alert-danger text-center mt-4">
+        Las contraseñas no coinciden.
+    </div>
     <% } %>
 </div>
 

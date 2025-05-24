@@ -23,7 +23,7 @@ public class ImageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String strImg = req.getParameter("img");
 
-        String imagePath = "D:\\universidad\\diseño web\\Proyecto final web\\BFC" + strImg;
+        String imagePath = "D:\\universidad\\diseño web\\Proyecto final web\\BFC\\" + strImg;
         File imageFile = new File(imagePath);
         int length = (int) imageFile.length();
 

@@ -16,7 +16,7 @@ public class AppConfig {
     public static String getImageDir() {
         String os = System.getProperty("os.name");
         if (os.toLowerCase().contains("windows")) {
-            return "D:\\universidad\\diseño web\\Proyecto final web\\BFC" + rb.getString("windowsImage");
+            return "D:\\universidad\\diseño web\\Proyecto final web\\BFC\\" + rb.getString("windowsImage");
         }else{
             return rb.getString("linuxImage");
         }

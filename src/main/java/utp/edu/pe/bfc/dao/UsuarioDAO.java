@@ -35,7 +35,11 @@ public class UsuarioDAO {
             ps.setString(4, usuario.getTipo().name());
             ps.setString(5, usuario.getTelefono());
             ps.setString(6, usuario.getDireccion());
-            ps.setString(7, usuario.getEstado().toString());
+            if (usuario.getEstado() == null) {
+                ps.setString(7, Estado.ACTIVE.toString());
+            } else {
+                ps.setString(7, usuario.getEstado().toString());
+            }
             ps.executeUpdate();
         } catch (IOException e) {
             throw new RuntimeException(e);
