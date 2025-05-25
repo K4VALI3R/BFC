@@ -27,9 +27,9 @@
     <h1 class=" text-danger fw-bold" style="margin-left:-205px;font-size:65px;transform: scaleX(1.3);">BFC</h1>
 
     <nav class="d-flex gap-3" style="margin-left:-628px;margin-top:16px;">
-      <a href="" class="text-dark text-decoration-none fw-bold"style="font-size:18.5px;">ENCUENTRA TU KFC</a>
-      <a href="" class="text-dark text-decoration-none fw-bold"style="font-size:18.5px;">VER MENÚ</a>
-      <a href="" class="text-dark text-decoration-none fw-bold" style="font-size:18.5px;">NOSOTROS</a>
+      <a href="encuentra.jsp" class="text-dark text-decoration-none fw-bold"style="font-size:18.5px;">ENCUENTRA TU KFC</a>
+      <a href="menu.jsp" class="text-dark text-decoration-none fw-bold"style="font-size:18.5px;">VER MENÚ</a>
+      <a href="#sobre-nosotros" class="text-dark text-decoration-none fw-bold" style="font-size:18.5px;">NOSOTROS</a>
     </nav>
 
     <% if (session.getAttribute("usuario") == null) { %>
@@ -42,26 +42,8 @@
 
 <body>
 
-<div class="container" style="margin-top:25px;">
-  <div class="row">
 
-    <div class="col-md-6 bg-white text-center border-danger rounded p-4">
-      <p class="fs-3" style="margin-bottom:0px; margin-top:25px;font-family: 'Oswald', sans-serif;font-weight: 500;"> <strong>¿CÓMO PREFIERES PEDIR?</strong></p>
-      <p class="text-secondary" style="margin-top: 0;" >A domicilio o para recoger en el restaurante</p>
-    </div>
 
-    <div class="col-md-6 text-center " style="margin-top:-2px" >
-
-      <div class="d-flex justify-content-center mb-3 " style="gap: 10px;margin-top:-2px;">
-        <button class="btn btn-danger fw-bold" style="width:275px; height: 40.2px;border-radius: 20px;margin-left:-34px">DELIVERY</button>
-        <button class="btn btn-white fw-bold"  style="width:275px; height: 40.2px;border-radius: 20px ;border: 0.1px solid lightgray;">RECOJO EN TIENDA</button>
-      </div>
-      <p style="width:153px ;font-weight:500;margin-left:17px;margin-top:-5px;font-size:16.7px;" >Escribe tu dirección</p>
-      <input type="text" class="form-control" placeholder="Ingresa tu dirección" style=" margin-left:20px ;margin-top:-15px; max-width: 540px;">
-    </div>
-
-  </div>
-</div>
 
 <div style="margin-top:28.5px;">
   <img src="img/banner.jpeg" style="width: 100%; height: 100%; margin-top:-9px;">
@@ -104,6 +86,7 @@
 
 
 
+    </body>
+    <jsp:include page="components/footer.jsp"/>
 
-</body>
 </html>

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <jsp:include page="components/header.jsp"/>
-    <body >
+    <body>
 
 
     <!-- NAVBAR CON SOMBRA ARRIBA -->

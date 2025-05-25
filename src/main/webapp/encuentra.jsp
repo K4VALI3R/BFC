@@ -19,7 +19,7 @@
        <div class="d-flex align-items-start mb-2">
          <span class="badge bg-danger me-2" style="border-radius: 50%;">1</span>
          <div>
-           <h5 class="mb-0 fw-bold">KFC PLAZA VEA BOLICHERA</h5>
+           <h5 class="mb-0 fw-bold">BFC PLAZA VEA BOLICHERA</h5>
          </div>
        </div>
 
