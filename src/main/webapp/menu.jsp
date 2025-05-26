@@ -26,6 +26,7 @@
       <a href="#para2" onclick="marcaActivo(event)" style="color: black; text-decoration: none; padding-bottom: 4px; font-weight: normal;">PARA2</a>
     </nav>
 
+
     <div id="contenido" style="
       margin-top: 55px;
       padding: 1rem 2rem;
@@ -45,7 +46,7 @@
               <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/13440_13440_202504241343390634.jpg" style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
               <p class="fw-bold" style="margin-top:5px; text-align:center;">WINGS & KRUNCH: 18 HOTS</p>
               <p style="margin-top:65px; font-family: 'Oswald', sans-serif; text-align:center;">S/.34.90</p>
-              <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Carrito</button>
+              <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Agregar</button>
               </div>
 
           </div>
@@ -55,7 +56,7 @@
                <img src="img/prod1logo.jpg" style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
               <p class="fw-bold" style="margin-top:5px; text-align:center;">DÚO TWISTER XL CON PAPAS</p>
               <p style="margin-top:65px; font-family: 'Oswald', sans-serif; text-align:center;">S/.38.90</p>
-             <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Carrito</button>
+             <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Agregar</button>
            </div>
           </div>
 
@@ -64,7 +65,7 @@
                 <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/15125_15125_202409231052201399.jpg"  style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                 <p class="fw-bold" style="margin-top:5px; text-align:center;">MEGA 24 PIEZAS</p>
                <p style="margin-top:65px;font-family: 'Oswald', sans-serif;text-align:center;">S/ .149.90</p>
-               <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Carrito</button>
+               <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
               </div>
             </div>
 
@@ -73,7 +74,7 @@
                    <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/15399_15399_202410311724111662.jpg" style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                    <p class="fw-bold" style="margin-top:5px; text-align:center;">KRUNCHY DÚO</p>
                   <p style="margin-top:65px; font-family: 'Oswald', sans-serif; text-align:center;">S/.24.90</p>
-                <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Carrito</button>
+                <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Agregar</button>
               </div>
             </div>
 
@@ -82,7 +83,7 @@
                      <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/14328_14328_202505200900189186.jpg"  style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                     <p class="fw-bold" style="margin-top:5px; text-align:center;">KRUNCHY PARA 4</p>
                     <p style="margin-top:65px;font-family: 'Oswald', sans-serif;text-align:center;">S/ .35.90</p>
-                    <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Carrito</button>
+                    <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
                </div>
              </div>
 
@@ -91,7 +92,7 @@
                         <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/MEGA%20DELIVERY%20V4_12468_202412200859167706.jpg"  style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                          <p class="fw-bold" style="margin-top:5px; text-align:center;">MEGA DELIVERY - 8 PIEZAS</p>
                         <p style="margin-top:65px;font-family: 'Oswald', sans-serif;text-align:center;">S/ .39.90</p>
-                         <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Carrito</button>
+                         <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
                         </div>
                 </div>
 
@@ -100,7 +101,7 @@
                  <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/15968_15968_202503211424266519.jpg" style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                   <p class="fw-bold" style="margin-top:5px; text-align:center;">PROMO TWISTERXL + AGUA SABORIZADA</p>
                  <p style="margin-top:65px; font-family: 'Oswald', sans-serif; text-align:center;">S/.28.90</p>
-                <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Carrito</button>
+                <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Agregar</button>
                </div>
              </div>
 
@@ -109,7 +110,7 @@
               <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/MEGA%20DELIVERY%20G_15126_202412200902009050.jpg"  style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
               <p class="fw-bold" style="margin-top:5px; text-align:center;">MEGA DELIVERY + GASEOSA</p>
               <p style="margin-top:65px;font-family: 'Oswald', sans-serif;text-align:center;">S/ .45.90</p>
-              <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Carrito</button>
+              <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
             </div>
            </div>
 
@@ -130,7 +131,7 @@
                 <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/13440_13440_202504241343390634.jpg" style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                 <p class="fw-bold" style="margin-top:5px; text-align:center;">WINGS & KRUNCH: 18 HOTS</p>
                 <p style="margin-top:65px; font-family: 'Oswald', sans-serif; text-align:center;">S/.34.90</p>
-                <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Carrito</button>
+                <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Agregar</button>
                 </div>
 
             </div>
@@ -140,7 +141,7 @@
                  <img src="img/prod1logo.jpg" style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                 <p class="fw-bold" style="margin-top:5px; text-align:center;">DÚO TWISTER XL CON PAPAS</p>
                 <p style="margin-top:65px; font-family: 'Oswald', sans-serif; text-align:center;">S/.38.90</p>
-               <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Carrito</button>
+               <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Agregar</button>
              </div>
             </div>
 
@@ -149,7 +150,7 @@
                   <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/15125_15125_202409231052201399.jpg"  style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                   <p class="fw-bold" style="margin-top:5px; text-align:center;">MEGA 24 PIEZAS</p>
                  <p style="margin-top:65px;font-family: 'Oswald', sans-serif;text-align:center;">S/ .149.90</p>
-                 <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Carrito</button>
+                 <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
                 </div>
               </div>
 
@@ -158,7 +159,7 @@
                      <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/15399_15399_202410311724111662.jpg" style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                      <p class="fw-bold" style="margin-top:5px; text-align:center;">KRUNCHY DÚO</p>
                     <p style="margin-top:65px; font-family: 'Oswald', sans-serif; text-align:center;">S/.24.90</p>
-                  <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Carrito</button>
+                  <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Agregar</button>
                 </div>
               </div>
 
@@ -167,7 +168,7 @@
                        <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/14328_14328_202505200900189186.jpg"  style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                       <p class="fw-bold" style="margin-top:5px; text-align:center;">KRUNCHY PARA 4</p>
                       <p style="margin-top:65px;font-family: 'Oswald', sans-serif;text-align:center;">S/ .35.90</p>
-                      <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Carrito</button>
+                      <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
                  </div>
                </div>
 
@@ -176,7 +177,7 @@
                           <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/MEGA%20DELIVERY%20V4_12468_202412200859167706.jpg"  style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                            <p class="fw-bold" style="margin-top:5px; text-align:center;">MEGA DELIVERY - 8 PIEZAS</p>
                           <p style="margin-top:65px;font-family: 'Oswald', sans-serif;text-align:center;">S/ .39.90</p>
-                           <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Carrito</button>
+                           <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
                           </div>
                   </div>
 
@@ -185,7 +186,7 @@
                    <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/15968_15968_202503211424266519.jpg" style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                     <p class="fw-bold" style="margin-top:5px; text-align:center;">PROMO TWISTERXL + AGUA SABORIZADA</p>
                    <p style="margin-top:65px; font-family: 'Oswald', sans-serif; text-align:center;">S/.28.90</p>
-                  <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Carrito</button>
+                  <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Agregar</button>
                  </div>
                </div>
 
@@ -194,7 +195,7 @@
                 <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/MEGA%20DELIVERY%20G_15126_202412200902009050.jpg"  style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                 <p class="fw-bold" style="margin-top:5px; text-align:center;">MEGA DELIVERY + GASEOSA</p>
                 <p style="margin-top:65px;font-family: 'Oswald', sans-serif;text-align:center;">S/ .45.90</p>
-                <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Carrito</button>
+                <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
               </div>
              </div>
 
@@ -214,7 +215,7 @@
                <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/13440_13440_202504241343390634.jpg" style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                <p class="fw-bold" style="margin-top:5px; text-align:center;">WINGS & KRUNCH: 18 HOTS</p>
                <p style="margin-top:65px; font-family: 'Oswald', sans-serif; text-align:center;">S/.34.90</p>
-               <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Carrito</button>
+               <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Agregar</button>
                </div>
 
            </div>
@@ -224,7 +225,7 @@
                 <img src="img/prod1logo.jpg" style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                <p class="fw-bold" style="margin-top:5px; text-align:center;">DÚO TWISTER XL CON PAPAS</p>
                <p style="margin-top:65px; font-family: 'Oswald', sans-serif; text-align:center;">S/.38.90</p>
-              <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Carrito</button>
+              <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Agregar</button>
             </div>
            </div>
 
@@ -233,7 +234,7 @@
                  <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/15125_15125_202409231052201399.jpg"  style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                  <p class="fw-bold" style="margin-top:5px; text-align:center;">MEGA 24 PIEZAS</p>
                 <p style="margin-top:65px;font-family: 'Oswald', sans-serif;text-align:center;">S/ .149.90</p>
-                <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Carrito</button>
+                <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
                </div>
              </div>
 
@@ -242,7 +243,7 @@
                     <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/15399_15399_202410311724111662.jpg" style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                     <p class="fw-bold" style="margin-top:5px; text-align:center;">KRUNCHY DÚO</p>
                    <p style="margin-top:65px; font-family: 'Oswald', sans-serif; text-align:center;">S/.24.90</p>
-                 <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Carrito</button>
+                 <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Agregar</button>
                </div>
              </div>
 
@@ -251,7 +252,7 @@
                       <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/14328_14328_202505200900189186.jpg"  style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                      <p class="fw-bold" style="margin-top:5px; text-align:center;">KRUNCHY PARA 4</p>
                      <p style="margin-top:65px;font-family: 'Oswald', sans-serif;text-align:center;">S/ .35.90</p>
-                     <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Carrito</button>
+                     <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
                 </div>
               </div>
 
@@ -260,7 +261,7 @@
                          <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/MEGA%20DELIVERY%20V4_12468_202412200859167706.jpg"  style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                           <p class="fw-bold" style="margin-top:5px; text-align:center;">MEGA DELIVERY - 8 PIEZAS</p>
                          <p style="margin-top:65px;font-family: 'Oswald', sans-serif;text-align:center;">S/ .39.90</p>
-                          <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Carrito</button>
+                          <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
                          </div>
                  </div>
 
@@ -269,7 +270,7 @@
                   <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/15968_15968_202503211424266519.jpg" style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                    <p class="fw-bold" style="margin-top:5px; text-align:center;">PROMO TWISTERXL + AGUA SABORIZADA</p>
                   <p style="margin-top:65px; font-family: 'Oswald', sans-serif; text-align:center;">S/.28.90</p>
-                 <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Carrito</button>
+                 <button class="btn btn-danger" style="width:120px; height:56px; border-radius:40px; position:absolute; bottom:-30px; left:50%; transform:translateX(-50%);">Agregar</button>
                 </div>
               </div>
 
@@ -278,7 +279,7 @@
                <img src="https://cdn.tictuk.com/fbaba5c6-70cb-d548-0aa1-915f89e4a48c/ecommerce_delivery/MEGA%20DELIVERY%20G_15126_202412200902009050.jpg"  style="width:100%; height:45.8%; display: block; margin-bottom:9.92px;">
                <p class="fw-bold" style="margin-top:5px; text-align:center;">MEGA DELIVERY + GASEOSA</p>
                <p style="margin-top:65px;font-family: 'Oswald', sans-serif;text-align:center;">S/ .45.90</p>
-               <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Carrito</button>
+               <button class="btn btn-danger"style="width:120px; height:56px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
              </div>
             </div>
 

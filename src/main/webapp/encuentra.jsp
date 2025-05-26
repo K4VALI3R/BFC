@@ -51,13 +51,14 @@
          </li>
        </ul>
 
-       <a href="principal.jsp" ><button class="btn btn-danger w-100 fw-bold" style="border-radius: 40px;">EMPEZAR MI PEDIDO</button></a>
+       <a href="index.jsp" ><button class="btn btn-danger w-100 fw-bold" style="border-radius: 40px;">EMPEZAR MI PEDIDO</button></a>
      </div>
 
 
-      <div style="margin-left:800px; margin-top:-450px;  height:650px;width:663px; padding:0; border:2px solid lightgray; border-radius:3px; position: relative;">
-               <img src="img/mapa.png" style="width:100%; height:100%; display: block; ">
-            </div>
+      <div style="margin-left:800px; margin-top:-450px;  height:auto;width:605px; padding:0; border:2px solid lightgray; border-radius:3px; position: relative;">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.481516912248!2d-76.98923409200287!3d-12.147586108658922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8152ac9162b%3A0x32694b5dc67a569c!2sAv.%20el%20Parque%20588%2C%20Lima%2015054!5e0!3m2!1ses!2spe!4v1748224212067!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width:100%; height:100%; display: block;</iframe>">
+               </iframe>
+      </div>
 
 
     </body>

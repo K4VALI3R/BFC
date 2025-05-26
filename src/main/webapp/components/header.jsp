@@ -45,7 +45,7 @@
 <!-- HEADER -->
 <header class="bg-white border-bottom shadow-sm" style="height:83px;">
   <div class="container d-flex justify-content-between align-items-center">
-    <a href="principal.jsp" class="text-danger fw-bold text-decoration-none" style="margin-left:-205px;margin-top:-10px;font-size:65px;transform: scaleX(1.3);">
+    <a href="index.jsp" class="text-danger fw-bold text-decoration-none" style="margin-left:-205px;margin-top:-10px;font-size:65px;transform: scaleX(1.3);">
       BFC
     </a>
 

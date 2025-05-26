@@ -15,7 +15,7 @@
         <button type="button" class="btn btn-success m-1" onclick="location.href='crear-producto.jsp'">Agregar producto</button>
       </div>
       <div class="table-responsive">
-        <table class="table text-center table-responsive justify-content-center align-items-center">
+        <table class="table text-center table-responsive justify-content-center">
           <thead>
           <th>Id</th>
           <th>Nombre</th>
@@ -27,8 +27,9 @@
           </thead>
           <tbody>
           <% if (!productos.isEmpty()) { %>
-          <tr>
+
             <% for (Producto producto : productos) { %>
+          <tr>
             <td><%= producto.getProductoId() %></td>
             <td><%= producto.getNombre() %></td>
             <td><%= producto.getPrecio() %></td>

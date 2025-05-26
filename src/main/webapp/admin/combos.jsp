@@ -28,8 +28,9 @@
                     </thead>
                     <tbody>
                     <% if (!combos.isEmpty()) { %>
-                    <tr>
+
                         <% for (Combo combo : combos) { %>
+                    <tr>
                         <td><%= combo.getComboId() %></td>
                         <td><%= combo.getNombre() %></td>
                         <td><%= combo.getPrecio() %></td>

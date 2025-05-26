@@ -50,7 +50,6 @@
 
 </div>
 
-<p class="fw-bold" style="margin-top:37px; margin-left:352.5px; font-size:25px;" >OFERTA POR TIEMPO LIMITADO</p>
 
 <div class="container" style="margin-top:21px;">
   <div class="row">
@@ -58,10 +57,10 @@
     <!-- Columna 1 -->
     <% for (Producto producto : productos) { %>
     <div style="margin-left:60px; margin-right:-42px; margin-top:11.5px; width:261px; padding:0; border:1px solid lightgray; border-radius:3px; position: relative;">
-      <img src="image/<%= producto.getNombre() %>" style="width:100%; height:50.4%; display: block; margin-bottom:9.92px;">
+      <img src="image?img=<%= producto.getNombre() %>.jpg" style="width:100%; height:50.4%; display: block; margin-bottom:9.92px;">
       <p class="fw-bold" style="margin-bottom:50px; text-align:center;"><%= producto.getNombre() %></p>
       <p class="mb-3 text-center">S/<%= producto.getPrecio() %></p>
-      <button class="btn btn-danger"style="width:120px; height:60px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Carrito</button>
+      <button class="btn btn-danger"style="width:120px; height:60px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
     </div>
     <% } %>
   </div>
@@ -70,23 +69,25 @@
     <!-- Columna 1 -->
     <% for (Combo combo : combos) { %>
     <div style="margin-left:60px; margin-right:-42px; margin-top:11.5px; width:261px; padding:0; border:1px solid lightgray; border-radius:3px; position: relative;">
-      <img src="image/<%= combo.getNombre() %>" style="width:100%; height:50.4%; display: block; margin-bottom:9.92px;">
+
+      <img src="image?img=<%= combo.getNombre() %>.jpg" style="width:100%; height:50.4%; display: block; margin-bottom:9.92px;">
       <p class="fw-bold" style="margin-bottom:50px; text-align:center;"><%= combo.getNombre() %></p>
       <p class="mb-3 text-center">S/<%= combo.getPrecio() %></p>
-      <button class="btn btn-danger"style="width:120px; height:60px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Carrito</button>
+      <button class="btn btn-danger"style="width:120px; height:60px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
     </div>
     <% } %>
   </div>
 
 
-  <p class="fw-bold" style="margin-left:50px;margin-top:70px;font-size:25px;" >EXPLORA NUESTRO MENÚ</p>
 
 
 
 
 
 
-    </body>
+
+</body>
+
     <jsp:include page="components/footer.jsp"/>
 
 </html>
