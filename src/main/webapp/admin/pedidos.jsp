@@ -1,6 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="utp.edu.pe.bfc.models.Producto" %>
-<%@ page import="utp.edu.pe.bfc.models.enums.Estado" %>
+<%@ page import="utp.edu.pe.bfc.models.enums.EstadoPedido" %>
 <%@ page import="utp.edu.pe.bfc.models.Pedido" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
@@ -12,6 +12,9 @@
 <div class="container-fluid">
   <div class="card">
     <div class="card-body">
+      <div>
+        <button type="button" class="btn btn-success m-1" onclick="location.href='crear-pedido.jsp'">Agregar pedido</button>
+      </div>
       <div class="table-responsive">
         <table class="table text-center table-responsive justify-content-center align-items-center">
           <thead>
@@ -25,8 +28,9 @@
           </thead>
           <tbody>
           <% if (!pedidos.isEmpty()) { %>
+          <% for (Pedido pedido : pedidos) { %>
           <tr>
-            <% for (Pedido pedido : pedidos) { %>
+
             <td><%= pedido.getPedidoId() %></td>
             <td><%= pedido.getCliente().getNombreCompleto() %></td>
             <td><%= pedido.getFecha() %></td>
@@ -34,7 +38,15 @@
             <td>S/<%= pedido.getMonto() %></td>
             <td> <%= pedido.getEstado().getDisplayName() %> </td>
             <td> <a href="ver-detalle-pedido?id=<%= pedido.getPedidoId() %>"> Ver detalle </a> </td>
+            <td>
+              <a
+                      type="button"
+                      class="btn btn-primary m-1"
+                      href="redireccionar-pedido?id=<%= pedido.getPedidoId() %>"
+              >Editar</a>
+            </td>
             <% } %>
+
           </tr>
           <% } else { %>
           <tr>

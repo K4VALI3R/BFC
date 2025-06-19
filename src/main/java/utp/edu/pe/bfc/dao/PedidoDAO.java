@@ -1,7 +1,10 @@
 package utp.edu.pe.bfc.dao;
 
 import utp.edu.pe.bfc.models.Pedido;
+import utp.edu.pe.bfc.models.Usuario;
+import utp.edu.pe.bfc.models.enums.Estado;
 import utp.edu.pe.bfc.models.enums.EstadoPedido;
+import utp.edu.pe.bfc.models.enums.Tipo;
 import utp.edu.pe.bfc.utils.AppConfig;
 import utp.edu.pe.bfc.utils.DataAccess;
 
@@ -22,7 +25,7 @@ public class PedidoDAO {
     }
 
     public void createPedido(Pedido pedido) throws SQLException {
-        String query = "INSERT INTO pedido (clienteId, adminId, fecha, direccion, monto, tipo) VALUES (?, ?, ?, ?,?,?)";
+        String query = "INSERT INTO pedido (clienteId, adminId, fecha, direccion, monto, estado) VALUES (?, ?, ?, ?,?,?)";
         try (PreparedStatement ps = cnn.prepareStatement(query)) {
             ps.setInt(1, pedido.getCliente().getUsuarioId());
             ps.setInt(2, pedido.getAdmin().getUsuarioId());
@@ -52,7 +55,7 @@ public class PedidoDAO {
                     pedido.setFecha(rs.getTimestamp("fecha").toLocalDateTime());
                     pedido.setDireccion(rs.getString("direccion"));
                     pedido.setMonto(rs.getDouble("monto"));
-                    pedido.setEstado(EstadoPedido.valueOf(rs.getString("tipo")));
+                    pedido.setEstado(EstadoPedido.valueOf(rs.getString("estado")));
                     return pedido;
                 }
             }
@@ -63,7 +66,7 @@ public class PedidoDAO {
     }
 
     public void updatePedido(Pedido pedido) throws SQLException {
-        String query = "UPDATE pedido SET clienteId = ?, adminId = ?, fecha = ?, direccion = ?, monto = ?, tipo = ?";
+        String query = "UPDATE pedido SET clienteId = ?, adminId = ?, fecha = ?, direccion = ?, monto = ?, estado = ? WHERE pedidoId = ?";
         try (PreparedStatement ps = cnn.prepareStatement(query)) {
             ps.setInt(1, pedido.getCliente().getUsuarioId());
             ps.setInt(2, pedido.getAdmin().getUsuarioId());
@@ -100,9 +103,9 @@ public class PedidoDAO {
                 pedido.setCliente(usuarioDAO.obtenerUsuarioPorId(rs.getInt("clienteId")));
                 pedido.setAdmin(usuarioDAO.obtenerUsuarioPorId(rs.getInt("adminId")));
                 pedido.setFecha(rs.getTimestamp("fecha").toLocalDateTime());
-                pedido.setDireccion(rs.getString("dirección"));
+                pedido.setDireccion(rs.getString("direccion"));
                 pedido.setMonto(rs.getDouble("monto"));
-                pedido.setEstado(EstadoPedido.valueOf(rs.getString("tipo")));
+                pedido.setEstado(EstadoPedido.valueOf(rs.getString("estado")));
                 pedidos.add(pedido);
             }
         } catch (SQLException e) {
@@ -112,4 +115,5 @@ public class PedidoDAO {
         }
         return pedidos;
     }
+
 }

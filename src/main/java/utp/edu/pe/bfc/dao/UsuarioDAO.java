@@ -1,5 +1,6 @@
 package utp.edu.pe.bfc.dao;
 
+import utp.edu.pe.bfc.models.Proveedor;
 import utp.edu.pe.bfc.models.Usuario;
 import utp.edu.pe.bfc.models.enums.Estado;
 import utp.edu.pe.bfc.models.enums.Tipo;
@@ -143,6 +144,23 @@ public class UsuarioDAO {
                         )
                 );
             }
+        }
+        return usuarios;
+    }
+    public List<Usuario> getAllUsuarios() {
+        List<Usuario> usuarios = new ArrayList<>();
+        String query = "SELECT usuarioId, nombreCompleto FROM usuario";
+        try (PreparedStatement ps = cnn.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                Usuario usuario = new Usuario();
+                usuario.setUsuarioId(rs.getInt("usuarioId"));
+                usuario.setNombreCompleto(rs.getString("nombreCompleto"));
+                usuarios.add(usuario);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // ✅ muestra errores en consola
+            throw new RuntimeException("Error al obtener usuarios", e);
         }
         return usuarios;
     }
