@@ -126,9 +126,12 @@
   <div class="text-center mt-3">
     <a href="index.jsp" class="btn btn-success">Volver al inicio</a>
   </div>
+  <form method="get" action="generarVoucher">
+    <button type="submit" class="btn btn-secondary">Descargar PDF</button>
+  </form>
 </div>
 
 <jsp:include page="components/footer.jsp"/>
 
-</body>
+
 </html>

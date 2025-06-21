@@ -88,7 +88,8 @@ public class ConfirmarPagoServlet extends HttpServlet {
             req.setAttribute("pedido", pedido);
             req.setAttribute("detalles", detalles); // deberás crear esta lista
             req.setAttribute("mensaje", "¡Tu pedido está en proceso!");
-
+            session.setAttribute("pedido", pedido);
+            session.setAttribute("detalles", detalles);
             req.getRequestDispatcher("pedido_exito.jsp").forward(req, resp); // Ir al dashboard
 
         } catch (Exception e) {

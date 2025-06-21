@@ -125,4 +125,40 @@ public class PedidoDetalleDAO {
         }
         return pedidoDetalles;
     }
+    public List<PedidoDetalle> getDetallesByPedido(int pedidoId) throws SQLException {
+        List<PedidoDetalle> detalles = new ArrayList<>();
+        String query = "SELECT * FROM pedidoDetalle WHERE pedidoId = ?";
+
+        try (PreparedStatement ps = cnn.prepareStatement(query)) {
+            ps.setInt(1, pedidoId);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                ProductoDAO productoDAO = new ProductoDAO();
+                ComboDAO comboDAO = new ComboDAO();
+
+                while (rs.next()) {
+                    PedidoDetalle detalle = new PedidoDetalle();
+                    detalle.setPedidoDetalleId(rs.getInt("pedidoDetalleId"));
+                    detalle.setCantidad(rs.getInt("cantidad"));
+                    detalle.setSubtotal(rs.getDouble("subtotal"));
+
+                    int productoId = rs.getInt("productoId");
+                    int comboId = rs.getInt("comboId");
+
+                    // Cargar producto o combo según corresponda
+                    if (productoId != 0) {
+                        detalle.setProducto(productoDAO.getProducto(productoId));
+                    } else if (comboId != 0) {
+                        detalle.setCombo(comboDAO.getCombo(comboId));
+                    }
+
+                    detalles.add(detalle);
+                }
+            }
+        } catch (Exception e) {
+            throw new SQLException("Error al obtener detalles del pedido", e);
+        }
+
+        return detalles;
+    }
 }

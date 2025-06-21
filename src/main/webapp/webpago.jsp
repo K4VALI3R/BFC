@@ -77,10 +77,10 @@
         </div>
 
         <div class="text-center mt-4">
-            <p>Escanea el siguiente código QR desde tu app Yape:</p>
-            <img class="qr-img" src="https://i.imgur.com/3W0GJ5f.png" alt="Yape QR">
-            <p><strong>Número Yape:</strong> 976114667</p>
-            <p>Envía tu comprobante por WhatsApp para confirmar tu pedido 📲</p>
+            <p>Escanea el siguiente código QR desde tu app Yape o Plin:</p>
+            <img class="qr-img" src="images/qr.JPG" alt="Yape QR">
+            <p><strong>Número:</strong> 976114667</p>
+            <p>Envía tu comprobante al número de WhatsApp para confirmar tu pedido 📲</p>
         </div>
 
         <div class="text-center mt-3">
