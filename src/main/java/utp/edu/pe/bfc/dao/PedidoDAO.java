@@ -1,10 +1,7 @@
 package utp.edu.pe.bfc.dao;
 
 import utp.edu.pe.bfc.models.Pedido;
-import utp.edu.pe.bfc.models.Usuario;
-import utp.edu.pe.bfc.models.enums.Estado;
 import utp.edu.pe.bfc.models.enums.EstadoPedido;
-import utp.edu.pe.bfc.models.enums.Tipo;
 import utp.edu.pe.bfc.utils.AppConfig;
 import utp.edu.pe.bfc.utils.DataAccess;
 
@@ -37,6 +34,7 @@ public class PedidoDAO {
         } catch (SQLException e) {
             throw new SQLException(e);
         }
+
     }
 
     public Pedido getPedido(int pedidoId) throws SQLException {
@@ -115,5 +113,35 @@ public class PedidoDAO {
         }
         return pedidos;
     }
+    public int createPedidoAndReturnId(Pedido pedido) throws SQLException {
+        String query = "INSERT INTO pedido (clienteId, adminId, fecha, direccion, monto, estado) VALUES (?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement ps = cnn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
+            ps.setInt(1, pedido.getCliente().getUsuarioId());
 
+            if (pedido.getAdmin() != null) {
+                ps.setInt(2, pedido.getAdmin().getUsuarioId());
+            } else {
+                ps.setNull(2, java.sql.Types.INTEGER);
+            }
+
+            ps.setTimestamp(3, Timestamp.valueOf(pedido.getFecha()));
+            ps.setString(4, pedido.getDireccion());
+            ps.setDouble(5, pedido.getMonto());
+            ps.setString(6, pedido.getEstado().toString());
+
+            ps.executeUpdate();
+
+            // Obtener el ID generado
+            try (ResultSet rs = ps.getGeneratedKeys()) {
+                if (rs.next()) {
+                    return rs.getInt(1); // pedidoId generado
+                } else {
+                    throw new SQLException("No se generó ID para el pedido.");
+                }
+            }
+
+        } catch (SQLException e) {
+            throw new SQLException("Error al crear pedido: " + e.getMessage(), e);
+        }
+    }
 }

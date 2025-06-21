@@ -31,7 +31,7 @@ public class CrearProductoServlet extends HttpServlet {
             Part filePart = req.getPart("imagen");
             Categoria categoria = Categoria.valueOf(req.getParameter("categoria"));
 
-            String imgDir = AppConfig.getImageDir();
+            String imgDir = getServletContext().getRealPath("/images");
 
             byte[] fileContent = filePart.getInputStream().readAllBytes();
             UTPBinary.echobin(fileContent, imgDir+"/"+ nombre + ".jpg");

@@ -23,17 +23,29 @@ public class PedidoDetalleDAO {
     public void close() throws SQLException{
         if(this.cnn !=null) DataAccess.closeConnection(this.cnn);
     }
-    public void createPedidoDetalle(PedidoDetalle pedidoDetalle) throws SQLException{
-        String query="INSER INTO pedidoDetalle(pedido, producto, combo, cantidad, subtotal) VALUES(?,?,?,?,?)";
-        try(PreparedStatement ps= cnn.prepareStatement(query)){
-            ps.setInt(1,pedidoDetalle.getPedido().getPedidoId());
-            ps.setInt(2,pedidoDetalle.getProducto().getProductoId());
-            ps.setInt(3,pedidoDetalle.getCombo().getComboId());
-            ps.setInt(4,pedidoDetalle.getCantidad());
+    public void createPedidoDetalle(PedidoDetalle pedidoDetalle) throws SQLException {
+        String query = "INSERT INTO pedidoDetalle(pedidoId, productoId, comboId, cantidad, subtotal) VALUES (?, ?, ?, ?, ?)";
+        try (PreparedStatement ps = cnn.prepareStatement(query)) {
+            ps.setInt(1, pedidoDetalle.getPedido().getPedidoId());
+
+            if (pedidoDetalle.getProducto() != null) {
+                ps.setInt(2, pedidoDetalle.getProducto().getProductoId());
+            } else {
+                ps.setNull(2, java.sql.Types.INTEGER);
+            }
+
+            if (pedidoDetalle.getCombo() != null) {
+                ps.setInt(3, pedidoDetalle.getCombo().getComboId());
+            } else {
+                ps.setNull(3, java.sql.Types.INTEGER);
+            }
+
+            ps.setInt(4, pedidoDetalle.getCantidad());
             ps.setDouble(5, pedidoDetalle.getSubtotal());
+
             ps.executeUpdate();
-        }catch (SQLException e){
-            throw new SQLException(e);
+        } catch (SQLException e) {
+            throw new SQLException("Error al crear pedidoDetalle: " + e.getMessage(), e);
         }
     }
     public PedidoDetalle getPedidoDetalle(int pedidoDetalleId) throws SQLException{
@@ -71,7 +83,7 @@ public class PedidoDetalleDAO {
             ps.setInt(3,pedidoDetalle.getCombo().getComboId());
             ps.setInt(4,pedidoDetalle.getCantidad());
             ps.setDouble(5,pedidoDetalle.getSubtotal());
-            ps.setInt(5,pedidoDetalle.getPedidoDetalleId());
+            ps.setInt(6,pedidoDetalle.getPedidoDetalleId());
             ps.executeUpdate();
         } catch (SQLException e){
             throw new SQLException(e);

@@ -17,8 +17,9 @@
         <h4 class="card-title" style="font-weight: bold;">Actualizar el producto</h4>
       </div>
       <form action="actualizar-combo" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="productoId" value="<%= combo.getComboId() %>">
+        <input type="hidden" name="comboId" value="<%= combo.getComboId() %>">
         <input type="hidden" name="estado" value="<%= combo.getEstado() %>">
+
         <div class="mb-3">
           <label for="nombre" class="form-label">Ingresa el nombre</label>
           <input type="text" class="form-control" id="nombre" name="nombre"

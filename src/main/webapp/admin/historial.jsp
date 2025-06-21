@@ -25,8 +25,9 @@
           </thead>
           <tbody>
           <% if (!pedidos.isEmpty()) { %>
+          <% for (Pedido pedido : pedidos) { %>
           <tr>
-            <% for (Pedido pedido : pedidos) { %>
+
             <td><%= pedido.getPedidoId() %></td>
             <td><%= pedido.getCliente().getNombreCompleto() %></td>
             <td><%= pedido.getFecha() %></td>

@@ -26,12 +26,17 @@ public class ComboDAO {
     }
 
     public void createCombo(Combo combo) throws SQLException {
-        String query = "INSERT INTO combo (nombre, imagen, precio, categoria) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO combo (nombre, imagen, precio, categoria,estado) VALUES (?, ?, ?, ?,?)";
         try (PreparedStatement ps = cnn.prepareStatement(query)) {
             ps.setString(1, combo.getNombre());
             ps.setString(2, combo.getImagen());
             ps.setDouble(3, combo.getPrecio());
             ps.setString(4, combo.getCategoria().toString());
+            if (combo.getEstado() == null) {
+                ps.setString(5, Estado.ACTIVE.toString());
+            } else {
+                ps.setString(5, combo.getEstado().toString());
+            }
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new SQLException(e);

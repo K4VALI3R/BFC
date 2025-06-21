@@ -39,7 +39,7 @@
                                     <label for="contrasena" class="form-label">Contraseña</label>
                                     <input type="password" class="form-control" id="contrasena" name="contrasena">
                                 </div>
-                                <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Ingresar</a>
+                                <button type="submit" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Ingresar</a> </button>
                             </form>
                         </div>
                     </div>

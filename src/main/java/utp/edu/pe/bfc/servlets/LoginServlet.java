@@ -6,11 +6,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import utp.edu.pe.bfc.models.Carritoo;
 import utp.edu.pe.bfc.models.Usuario;
 import utp.edu.pe.bfc.services.Auth;
 
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.ArrayList;
+
 
 @WebServlet(name = "login", urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet{
@@ -35,8 +37,7 @@ public class LoginServlet extends HttpServlet{
                 session.setAttribute("usuario", usuario);
                 switch (usuario.getTipo()) {
                     case CLIENTE:
-                        HashMap<Integer, Integer> carrito = new HashMap<>();
-                        session.setAttribute("carrito", carrito);
+                        session.setAttribute("carrito", new ArrayList<Carritoo>());
                         session.setAttribute("usuario", usuario);
                         resp.sendRedirect("index.jsp");
                         break;
