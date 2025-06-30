@@ -10,6 +10,7 @@ public class Combo {
     private double precio;
     private Categoria categoria;
     private Estado estado;
+    private int stock;
 
     public Combo() {
     }
@@ -89,5 +90,13 @@ public class Combo {
 
     public void setEstado(Estado estado) {
         this.estado = estado;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 }

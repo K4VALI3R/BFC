@@ -26,7 +26,7 @@ public class ProductoDAO {
     }
 
     public void createProducto(Producto producto) throws SQLException {
-        String query = "INSERT INTO producto (nombre, precio, imagen, categoria,estado) VALUES (?, ?, ?, ?,?)";
+        String query = "INSERT INTO producto (nombre, precio, imagen, categoria,estado, stock) VALUES (?, ?, ?, ?,?,?)";
         try (PreparedStatement ps = cnn.prepareStatement(query)) {
             ps.setString(1, producto.getNombre());
             ps.setDouble(2, producto.getPrecio());
@@ -37,6 +37,7 @@ public class ProductoDAO {
             } else {
                 ps.setString(5, producto.getEstado().toString());
             }
+            ps.setInt(6, producto.getStock());
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new SQLException(e);
@@ -56,6 +57,7 @@ public class ProductoDAO {
                     producto.setPrecio(rs.getDouble("precio"));
                     producto.setCategoria(Categoria.valueOf(rs.getString("categoria")));
                     producto.setEstado(Estado.valueOf(rs.getString("estado")));
+                    producto.setStock(rs.getInt("stock"));
                     return producto;
                 }
             }
@@ -66,14 +68,15 @@ public class ProductoDAO {
     }
 
     public void updateProducto(Producto producto) throws SQLException {
-        String query = "UPDATE producto SET nombre = ?, precio = ?, imagen = ?, categoria = ?, estado = ? WHERE productoId = ?";
+        String query = "UPDATE producto SET nombre = ?, precio = ?, imagen = ?, categoria = ?,stock = ?, estado = ? WHERE productoId = ?";
         try (PreparedStatement ps = cnn.prepareStatement(query)) {
             ps.setString(1, producto.getNombre());
             ps.setDouble(2, producto.getPrecio());
             ps.setString(3, producto.getImagen());
             ps.setString(4, producto.getCategoria().toString());
-            ps.setString(5, producto.getEstado().toString());
-            ps.setInt(6, producto.getProductoId());
+            ps.setInt(5, producto.getStock());
+            ps.setString(6, producto.getEstado().toString());
+            ps.setInt(7, producto.getProductoId());
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new SQLException(e);
@@ -113,6 +116,7 @@ public class ProductoDAO {
                 producto.setPrecio(rs.getDouble("precio"));
                 producto.setCategoria(Categoria.valueOf(rs.getString("categoria")));
                 producto.setEstado(Estado.valueOf(rs.getString("estado")));
+                producto.setStock(rs.getInt("stock"));
                 productos.add(producto);
             }
         } catch (SQLException e) {
@@ -133,6 +137,7 @@ public class ProductoDAO {
                 producto.setImagen(rs.getString("imagen"));
                 producto.setPrecio(rs.getDouble("precio"));
                 producto.setCategoria(Categoria.valueOf(rs.getString("categoria")));
+                producto.setStock(rs.getInt("stock"));
                 productos.add(producto);
             }
         } catch (SQLException e) {
@@ -160,5 +165,12 @@ public class ProductoDAO {
         }
         return productos;
     }
-
+    public void updateStock(int productoId, int nuevoStock) throws SQLException {
+        String query = "UPDATE producto SET stock = ? WHERE productoId = ?";
+        try (PreparedStatement ps = cnn.prepareStatement(query)) {
+            ps.setInt(1, nuevoStock);
+            ps.setInt(2, productoId);
+            ps.executeUpdate();
+        }
+    }
 }

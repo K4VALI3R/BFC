@@ -10,10 +10,7 @@ import utp.edu.pe.bfc.dao.ComboDAO;
 import utp.edu.pe.bfc.dao.PedidoDAO;
 import utp.edu.pe.bfc.dao.PedidoDetalleDAO;
 import utp.edu.pe.bfc.dao.ProductoDAO;
-import utp.edu.pe.bfc.models.Carritoo;
-import utp.edu.pe.bfc.models.Pedido;
-import utp.edu.pe.bfc.models.PedidoDetalle;
-import utp.edu.pe.bfc.models.Usuario;
+import utp.edu.pe.bfc.models.*;
 import utp.edu.pe.bfc.models.enums.EstadoPedido;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -72,13 +69,24 @@ public class ConfirmarPagoServlet extends HttpServlet {
                 detalle.setCantidad(item.getCantidad());
                 detalle.setSubtotal(item.getSubtotal());
 
-
                 if ("producto".equalsIgnoreCase(item.getTipo())) {
-                    detalle.setProducto(productoDAO.getProducto(item.getId()));
-                } else if ("combo".equalsIgnoreCase(item.getTipo())) {
-                    detalle.setCombo(comboDAO.getCombo(item.getId()));
-                }
+                    Producto producto = productoDAO.getProducto(item.getId());
+                    detalle.setProducto(producto);
 
+
+                    int nuevoStock = producto.getStock() - item.getCantidad();
+                    producto.setStock(nuevoStock);
+                    productoDAO.updateStock(producto.getProductoId(), nuevoStock);
+
+                } else if ("combo".equalsIgnoreCase(item.getTipo())) {
+                    Combo combo = comboDAO.getCombo(item.getId());
+                    detalle.setCombo(combo);
+
+                    // ❗ Descontar stock
+                    int nuevoStock = combo.getStock() - item.getCantidad();
+                    combo.setStock(nuevoStock);
+                    comboDAO.updateStock(combo.getComboId(), nuevoStock);
+                }
 
                 detalleDAO.createPedidoDetalle(detalle);
                 detalles.add(detalle);

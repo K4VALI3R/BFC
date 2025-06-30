@@ -26,7 +26,7 @@ public class ComboDAO {
     }
 
     public void createCombo(Combo combo) throws SQLException {
-        String query = "INSERT INTO combo (nombre, imagen, precio, categoria,estado) VALUES (?, ?, ?, ?,?)";
+        String query = "INSERT INTO combo (nombre, imagen, precio, categoria,estado, stock) VALUES (?, ?, ?, ?,?,?)";
         try (PreparedStatement ps = cnn.prepareStatement(query)) {
             ps.setString(1, combo.getNombre());
             ps.setString(2, combo.getImagen());
@@ -37,6 +37,7 @@ public class ComboDAO {
             } else {
                 ps.setString(5, combo.getEstado().toString());
             }
+            ps.setInt(6,combo.getStock());
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new SQLException(e);
@@ -56,6 +57,7 @@ public class ComboDAO {
                     combo.setPrecio(rs.getDouble("precio"));
                     combo.setCategoria(Categoria.valueOf(rs.getString("categoria")));
                     combo.setEstado(Estado.valueOf(rs.getString("estado")));
+                    combo.setStock(rs.getInt("stock"));
                     return combo;
                 }
             }
@@ -66,14 +68,15 @@ public class ComboDAO {
     }
 
     public void updateCombo(Combo combo) throws SQLException {
-        String query = "UPDATE combo SET nombre = ?, imagen = ?, precio = ?, categoria = ?, estado = ? WHERE comboId = ?";
+        String query = "UPDATE combo SET nombre = ?, imagen = ?, precio = ?, categoria = ?,stock = ?, estado = ? WHERE comboId = ?";
         try (PreparedStatement ps = cnn.prepareStatement(query)) {
             ps.setString(1, combo.getNombre());
             ps.setString(2, combo.getImagen());
             ps.setDouble(3, combo.getPrecio());
             ps.setString(4, combo.getCategoria().toString());
-            ps.setString(5, combo.getEstado().toString());
-            ps.setInt(6, combo.getComboId());
+            ps.setInt(5, combo.getStock());
+            ps.setString(6, combo.getEstado().toString());
+            ps.setInt(7, combo.getComboId());
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new SQLException(e);
@@ -103,6 +106,7 @@ public class ComboDAO {
                 combo.setPrecio(rs.getDouble("precio"));
                 combo.setCategoria(Categoria.valueOf(rs.getString("categoria")));
                 combo.setEstado(Estado.valueOf(rs.getString("estado")));
+                combo.setStock(rs.getInt("stock"));
                 combos.add(combo);
             }
         } catch (SQLException e) {
@@ -124,6 +128,7 @@ public class ComboDAO {
                 combo.setPrecio(rs.getDouble("precio"));
                 combo.setCategoria(Categoria.valueOf(rs.getString("categoria")));
                 combo.setEstado(Estado.valueOf(rs.getString("estado")));
+                combo.setStock(rs.getInt("stock"));
                 combos.add(combo);
             }
         } catch (SQLException e) {
@@ -144,6 +149,14 @@ public class ComboDAO {
         String query = "UPDATE combo SET estado = 'ACTIVE' WHERE comboId = ?";
         try (PreparedStatement ps = cnn.prepareStatement(query)) {
             ps.setInt(1, id);
+            ps.executeUpdate();
+        }
+    }
+    public void updateStock(int comboId, int nuevoStock) throws SQLException {
+        String query = "UPDATE combo SET stock = ? WHERE comboId = ?";
+        try (PreparedStatement ps = cnn.prepareStatement(query)) {
+            ps.setInt(1, nuevoStock);
+            ps.setInt(2, comboId);
             ps.executeUpdate();
         }
     }

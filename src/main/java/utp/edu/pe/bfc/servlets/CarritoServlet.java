@@ -51,33 +51,45 @@ public class CarritoServlet extends HttpServlet {
             boolean encontrado = false;
             for (Carritoo item : carrito) {
                 if (item.getId() == id && item.getTipo().equals(tipo)) {
-                    item.setCantidad(item.getCantidad() + 1);
+                    int cantidadActual = item.getCantidad();
+                    int stockDisponible = 0;
+
+                    try {
+                        if ("producto".equals(tipo)) {
+                            Producto prod = new ProductoDAO().getProducto(id);
+                            stockDisponible = prod.getStock();
+                        } else {
+                            Combo combo = new ComboDAO().getCombo(id);
+                            stockDisponible = combo.getStock();
+                        }
+                    } catch (SQLException | NamingException e) {
+                        throw new RuntimeException(e);
+                    }
+
+                    if (cantidadActual < stockDisponible) {
+                        item.setCantidad(cantidadActual + 1);
+                    }
+                    // Si ya no hay stock disponible, no se aumenta
                     encontrado = true;
                     break;
                 }
             }
 
             if (!encontrado) {
-                if ("producto".equals(tipo)) {
-                    Producto prod = null;
-                    try {
-                        prod = new ProductoDAO().getProducto(id);
-                    } catch (SQLException e) {
-                        throw new RuntimeException(e);
-                    } catch (NamingException e) {
-                        throw new RuntimeException(e);
+                try {
+                    if ("producto".equals(tipo)) {
+                        Producto prod = new ProductoDAO().getProducto(id);
+                        if (prod.getStock() > 0) {
+                            carrito.add(new Carritoo("producto", id, prod.getNombre(), (float) prod.getPrecio(), 1));
+                        }
+                    } else {
+                        Combo combo = new ComboDAO().getCombo(id);
+                        if (combo.getStock() > 0) {
+                            carrito.add(new Carritoo("combo", id, combo.getNombre(), (float) combo.getPrecio(), 1));
+                        }
                     }
-                    carrito.add(new Carritoo("producto", id, prod.getNombre(), (float) prod.getPrecio(), 1));
-                } else {
-                    Combo comb = null;
-                    try {
-                        comb = new ComboDAO().getCombo(id);
-                    } catch (SQLException e) {
-                        throw new RuntimeException(e);
-                    } catch (NamingException e) {
-                        throw new RuntimeException(e);
-                    }
-                    carrito.add(new Carritoo("combo", id, comb.getNombre(), (float) comb.getPrecio(), 1));
+                } catch (SQLException | NamingException e) {
+                    throw new RuntimeException(e);
                 }
             }
         }

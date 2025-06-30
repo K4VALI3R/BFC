@@ -43,7 +43,11 @@
       <form method="post" action="carrito">
         <input type="hidden" name="tipo" value="producto">
         <input type="hidden" name="id" value="<%= producto.getProductoId() %>">
+        <% if (producto.getStock() > 0) { %>
         <button class="btn btn-danger"style="width:120px; height:60px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
+        <% } else { %>
+        <button class="btn btn-secondary" disabled>Sin stock</button>
+        <% } %>
       </form>
     </div>
     <% } %>
@@ -68,7 +72,11 @@
       <form method="post" action="carrito">
         <input type="hidden" name="tipo" value="combo">
         <input type="hidden" name="id" value="<%= combo.getComboId() %>">
+        <% if (combo.getStock() > 0) { %>
         <button class="btn btn-danger"style="width:120px; height:60px; border-radius: 40px; position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%);">Agregar</button>
+        <% } else { %>
+        <button class="btn btn-secondary" disabled>Sin stock</button>
+        <% } %>
       </form>
     </div>
 

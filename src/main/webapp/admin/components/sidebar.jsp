@@ -63,6 +63,14 @@
         <span class="hide-menu">Proveedores</span>
       </a>
     </li>
+    <li class="sidebar-item">
+      <a class="sidebar-link" href="inventario" aria-expanded="false">
+                <span>
+                  <i class="ti ti-user"></i>
+                </span>
+        <span class="hide-menu">Inventario</span>
+      </a>
+    </li>
     <li class="nav-small-cap">
       <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
       <span class="hide-menu">Historial</span>

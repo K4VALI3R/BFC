@@ -10,6 +10,7 @@ public class Producto {
     private double precio;
     private Categoria categoria;
     private Estado estado;
+    private int stock;
 
     public Producto() {
     }
@@ -89,5 +90,13 @@ public class Producto {
 
     public void setEstado(Estado estado) {
         this.estado = estado;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 }
