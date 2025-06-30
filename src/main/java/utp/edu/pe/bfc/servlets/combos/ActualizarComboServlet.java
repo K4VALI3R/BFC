@@ -53,7 +53,8 @@ public class ActualizarComboServlet extends HttpServlet {
                 byte[] fileContent = filePart.getInputStream().readAllBytes();
                 UTPBinary.echobin(fileContent, imgDir + File.separator + nombreImagen);
             }
-
+            ComboDAO comboDAO = new ComboDAO();
+            Combo comboActual = comboDAO.getCombo(comboId);
             Combo combo = new Combo();
             combo.setComboId(comboId);
             combo.setNombre(nombre);
@@ -62,7 +63,8 @@ public class ActualizarComboServlet extends HttpServlet {
             combo.setCategoria(categoria);
             combo.setEstado(estado);
 
-            ComboDAO comboDAO = new ComboDAO();
+            combo.setStock(comboActual.getStock());
+
             comboDAO.updateCombo(combo);
             comboDAO.close();
 

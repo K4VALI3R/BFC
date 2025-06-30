@@ -52,15 +52,20 @@ public class ActualizarProductoServlet extends HttpServlet {
                 UTPBinary.echobin(fileContent, imgDir + File.separator + nombreImagen);
             }
 
+            ProductoDAO productoDAO = new ProductoDAO();
+            Producto productoActual = productoDAO.getProducto(productoId);
+
             Producto producto = new Producto();
             producto.setProductoId(productoId);
             producto.setNombre(nombre);
             producto.setPrecio(precio);
-            producto.setImagen(nombreImagen); // mantiene la anterior si no hay nueva
+            producto.setImagen(nombreImagen);
             producto.setCategoria(categoria);
             producto.setEstado(estado);
 
-            ProductoDAO productoDAO = new ProductoDAO();
+
+            producto.setStock(productoActual.getStock());
+
             productoDAO.updateProducto(producto);
             productoDAO.close();
 
